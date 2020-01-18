@@ -3,7 +3,7 @@ const app = express();
 
 
 app.get('*', function(req, res){
-        res.redirect('/');
+        return  res.json({ message: 'Hello '});
 });
 
 
