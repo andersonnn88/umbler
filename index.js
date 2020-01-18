@@ -1,10 +1,10 @@
 const express = require('express');
 const app = express();
 
-app.get('/', (req,res) =>{
-    return res.send('teste');
 
-})
+app.get('*', function(req, res){
+        res.redirect('/');
+});
 
 
 var port = process.env.PORT || 3000;
