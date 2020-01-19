@@ -13,7 +13,7 @@ module.exports = {
         
         let dev = await Dev.findOne({github_username});
 
-        if(!devexist){
+        if(!dev){
 
         const apiresponse = await axios.get(`https://api.github.com/users/${github_username}`);
     
