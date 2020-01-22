@@ -1,14 +1,17 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const routes  = require('./routes');
  
 const app = express();
 
-mongoose.connect('mongodb+srv://anderson:Andy251913@cluster0-xfdvf.mongodb.net/week10?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://anderson:Senha@cluster0-xfdvf.mongodb.net/week10?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 
 });
+app.use(cors());
+// yarn add cors libera acesso api remotamento
 
 app.use(express.json()); // endenter requição no foramto json
 app.use(routes);  
@@ -20,7 +23,7 @@ app.use(routes);
 
 // mongo (nao relacionado)
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 3333;
 app.listen(port, function () {
     console.log('Umbler executando na porta', port);
 });
